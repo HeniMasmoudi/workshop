@@ -1,6 +1,6 @@
 
 <!-- ABOUT THE PROJECT -->
-## About The Demo
+## About The workshop
 
 The workshop is aimed at getting started with Unit testing during CI/CD product cycle before taking it to production. We use Pytest as the Unit testing framework and python 3.7.
 
@@ -8,7 +8,7 @@ The workshop is aimed at getting started with Unit testing during CI/CD product 
 <!-- GETTING STARTED -->
 ### Installation
 
-These are instructions to install and get the services up and running. 
+These are instructions to install the repo and running. 
 
 1. Clone the repo
    ```sh
