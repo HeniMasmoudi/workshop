@@ -31,7 +31,7 @@ These are instructions to install the repo and running.
 4. A warning will pop up, tap ok
 5. right-click and then tap insert
 6. enter your key "workshop" and the value "your local path to the workshop folder"
-7. save and close, and then restart spyder
+7. save and close, and then restart anaconda powershell prompt
 
 
 <!-- LICENSE -->
