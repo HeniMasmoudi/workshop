@@ -19,6 +19,20 @@ These are instructions to install the repo and running.
    pip install -r requirements.txt
    ```   
 
+<!-- Env variables -->
+### defining Env variables
+
+1. Open anaconda Powershell Prompt and write spyder 
+```sh
+   spyder
+   ```
+2. In spyder open Tools from the options bar
+3. Click Current user environment variables
+4. A warning will pop up, tap ok
+5. right-click and then tap insert
+6. enter your key "workshop" and the value "your local path to the workshop folder"
+7. save and close, and then restart spyder
+
 
 <!-- LICENSE -->
 ## License
