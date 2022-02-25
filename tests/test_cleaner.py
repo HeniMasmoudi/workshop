@@ -48,3 +48,13 @@ def test_check_columns(selected_features):
 @pytest.mark.parametrize("feature", features)
 def test_lower(feature, lower_columns):
     assert feature in lower_columns, f"{feature} is not found in the features set"
+
+
+def test_datetime(data):
+    data = cleaning.lowername(data)
+    data = cleaning.parse_datetime(data)
+    assert data.invoicedate.dtype == "datetime64[ns]", "problem in parsing datetime"
+    assert data.invoicedate.shape[0] == 541909, (
+        "error in creating datetime",
+        f"expecting 541909 instance but got {data.invoicedate.shape[0]} instead",
+    )
