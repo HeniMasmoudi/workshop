@@ -29,3 +29,7 @@ def fetch_data(home):
         with zip.open("Online_Retail.csv") as myZip:
             data = pd.read_csv(myZip, encoding="unicode_escape")
     return data
+
+
+if __name__ == "__main__":
+    data = fetch_data(workshop_home)
