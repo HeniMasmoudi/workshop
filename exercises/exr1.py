@@ -4,8 +4,9 @@ a list of integers, and returns the smallest integer greater than 0 that appears
 or 0 if there is none.
 """
 
+
 def solve(items):
-    
+
     """
     code
     """

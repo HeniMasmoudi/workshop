@@ -1,11 +1,10 @@
 """
-scratch file for unittests workshop and
+Sum & mean unittests
 
 """
 
 import numpy as np
-import pytest
-np.random.seed(42)
+
 
 def sumofvalues(values):
     """iterate on values to compute the sum"""
@@ -18,7 +17,7 @@ def sumofvalues(values):
 
 def mean(values):
     """compute the mean using the first sum function"""
-    
+
     average = sumofvalues(values) / len(values)
     return average
 
@@ -26,7 +25,7 @@ def mean(values):
 def test_sum():
     """check if the sum is exactly
     numpy sum"""
-    values= np.array([3, 7, 1, 1])
+    values = np.array([3, 7, 1, 1])
     summ = sumofvalues(values)
     assert summ == 12
 
@@ -34,8 +33,7 @@ def test_sum():
 def test_mean():
     """check if the mean is exactly
     numpy mean"""
-    values= np.array([3, 7, 1, 1])
+    values = np.array([3, 7, 1, 1])
 
-    meann= mean(values)
+    meann = mean(values)
     assert meann == 3
-
