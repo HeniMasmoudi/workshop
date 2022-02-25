@@ -14,8 +14,9 @@ setup(
     zip_safe=False,
     include_package_data=True,
     install_requires=required,
-    packages=["staging"],
+    packages=["staging", "features_processing"],
     package_dir={
         "staging": "./src/staging",
+        "features_processing": "./src/features_processing",
     }
 )
