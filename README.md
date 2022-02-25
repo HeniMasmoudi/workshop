@@ -15,8 +15,10 @@ These are instructions to install the repo and running.
    git clone https://github.com/HeniMasmoudi/workshop.git 
    ```
 2. Install requirements
+
+Change your current directory to ../workshop 
    ```sh
-   pip install -r requirements.txt
+   pip install .
    ```   
 
 <!-- Env variables -->
