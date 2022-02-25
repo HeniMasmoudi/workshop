@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 # coding: utf-8
 
-from glob import glob
-from setuptools import setup, find_packages
+from setuptools import setup
 
 with open('requirements.txt') as f:
     required = f.read().splitlines()
