@@ -1,5 +1,8 @@
 import pandas as pd
 import pytest
+
+
+
 def load_data():
     data = pd.DataFrame([[0, 2, 7, 4, 8],
                          [1, 7, 6, 3, 7],
