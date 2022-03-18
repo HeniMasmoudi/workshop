@@ -22,8 +22,14 @@ def create_month_year(data):
     data["day_of_month"] = pd.DatetimeIndex(data.invoicedate).day
     return data
 
+def drop_time(data):
+    del data["invoicedate"]
+    return data
+
 
 if __name__ == "__main__":
     data = get_cleaned_data(workshop_home)
     data = create_doy(data)
     data = create_month_year(data)
+    # Invoice date is no longer needed
+    data = drop_time(data)

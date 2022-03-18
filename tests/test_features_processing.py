@@ -38,3 +38,9 @@ def test_mdy_creation(data):
     assert (
         "day_of_month" in data_with_mdy.columns
     ), "day of month is not found in processed data"
+
+def test_invdeletion(data):
+    data_without_invoice = createfeatures.drop_time(data)
+    # assert that this key no longer exists 
+    invdate = data_without_invoice.get("invoicedate")
+    assert (invdate is None) , "invoicedate expected to be removed" 
