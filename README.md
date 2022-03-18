@@ -22,10 +22,15 @@ These are instructions to install the repo and running.
 
 3. Install requirements
 
-   Change your current directory to ../workshop 
+   Change your current directory to ../workshop and then:
    ```sh
    conda activate workshop
    ```
+   Install python requirements 
+   ```sh
+   pip install -r requirements.txt
+   ```
+   Install local packages
    ```sh
    pip install .
    ```   
