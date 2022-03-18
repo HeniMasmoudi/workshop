@@ -14,9 +14,17 @@ These are instructions to install the repo and running.
    ```sh
    git clone https://github.com/HeniMasmoudi/workshop.git 
    ```
-2. Install requirements
+2. Lunch anaconda powershell and create an environment with a specific version of Python:
+   ```sh
+   conda create -n workshop python=3.7.5
+   ```
+
+3. Install requirements
 
 Change your current directory to ../workshop 
+   ```sh
+   conda activate workshop
+   ```
    ```sh
    pip install .
    ```   
