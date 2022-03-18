@@ -1,12 +1,5 @@
-autopep8
-iniconfig
-packaging
-pluggy
-py
-pycodestyle
-pyparsing
+spyder==5.1.5
 numpy
 pandas
 pytest 
 lightgbm
-spyder==5.1.5

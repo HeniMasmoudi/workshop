@@ -8,5 +8,5 @@ def get_preprocessed_data(home):
     return data
 
 if __name__ == "__main__":
-    get_preprocessed_data(workshop_home)
+    data = get_preprocessed_data(workshop_home)
     
