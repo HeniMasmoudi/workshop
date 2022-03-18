@@ -1,6 +1,7 @@
 import os
 import lightgbm as lgb 
 import numpy as np 
+import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 from features_processing import createfeatures
@@ -11,8 +12,6 @@ workshop_home = os.environ.get("workshop")
 parameters = {
     "Data_defaults": {
         "objective": "regression",
-        "num_iterations": 300,
-        "learning_rate": 0.1,
         "num_leaves": 31,
         "num_threads": 0,
         "deterministic": "true",
@@ -29,11 +28,12 @@ parameters = {
     },
     "Training_defaults": {
         "objective": "regression",
-        "num_iterations": 100,
+        "num_iterations": 1000,
+        "learning_rate": 0.1,
         "num_leaves": 31,
         "num_threads": 0,
         "deterministic": "true",
-        "max_depth": -1,
+        "max_depth": 30,
         "min_data_in_leaf": 20,
         "bagging_fraction": 0.7,
         "feature_fraction_bynode": 1,
@@ -88,16 +88,32 @@ def xlgbm(X,TX,y,Ty,cat_inds):
     y = np.reshape(y, (y.shape[0], 1))
     Ty_hat = np.reshape(Ty_hat, (Ty_hat.shape[0], 1))
     Ty = np.reshape(Ty, (Ty.shape[0], 1))
-    # Step - Outlier detection if applicable
+    # Step - remove negative values
+    Ty_hat[Ty_hat<0] = 0
+    y_hat[y_hat<0] = 0 
     
     y_out = {"y": y, "y_pred": y_hat}
     Ty_out = {"y": Ty, "y_pred": Ty_hat}
     
     return y_out, Ty_out
 
+
+def compute_accuracy(results):
+    actuals = results["y"]
+    predictions = results["y_pred"]
+    rmse = np.sqrt(np.mean((actuals-predictions)**2))
+    return rmse
+    
+
 if __name__ == "__main__":
     data = get_preprocessed_data(workshop_home)
     features, target , cat_pos = retrieve_X_y(data)
     X, TX, y, Ty = split_data(features, target)
     out, Tout = xlgbm(X,TX,y,Ty,cat_pos)
+    print(f"\nLearning RMSE: {compute_accuracy(out)}")
+    print(f"\nForecasts RMSE: {compute_accuracy(Tout)}")
+    # Plotting 
+    plt.plot(Tout["y"][:100],"r") 
+    plt.plot(Tout["y_pred"][:100])
+    plt.show()
     
