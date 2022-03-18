@@ -75,6 +75,10 @@ def xlgbm(X,TX,y,Ty,cat_inds):
     data_params = parameters["Data_defaults"]
     tr_params = parameters["Training_defaults"]
     data_params["categorical_feature"] = cat_inds
+    
+    # No stock out
+    Ty[Ty<0] = 0
+    y[y<0] = 0 
 
     # Train the model
     lgb_train = lgb.Dataset(X, y, params=data_params)
@@ -113,7 +117,10 @@ if __name__ == "__main__":
     print(f"\nLearning RMSE: {compute_accuracy(out)}")
     print(f"\nForecasts RMSE: {compute_accuracy(Tout)}")
     # Plotting 
-    plt.plot(Tout["y"][:100],"r") 
-    plt.plot(Tout["y_pred"][:100])
-    plt.show()
+    for size in range(10):
+        start = 100 * size
+        end = 100 * size + 100
+        plt.plot(Tout["y"][start:end], label="actuals", color="red")
+        plt.plot(Tout["y_pred"][start:end], label="forecasts", color="blue")
+        plt.show()
     
