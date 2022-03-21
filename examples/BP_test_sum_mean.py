@@ -22,7 +22,7 @@ def mean(values):
     return average
 
 
-def test_sum():
+def verify_sum():
     """check if the sum is exactly
     numpy sum"""
     values = np.array([3, 7, 1, 1])
@@ -30,14 +30,15 @@ def test_sum():
     assert summ == 12
 
 
-def test_mean():
+def verify_mean():
     """check if the mean is exactly
     numpy mean"""
     values = np.array([3, 7, 1, 1])
 
     meann = mean(values)
-    assert meann ==3
+    assert meann == 3
 
-if __name__=="__main__":
-    test_sum()
-    test_mean()
+
+if __name__ == "__main__":
+    verify_sum()
+    verify_mean()
