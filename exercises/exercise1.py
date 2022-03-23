@@ -7,8 +7,9 @@ or 0 if there is none.
 
 def solve(items):
 
-    """
-    code
-    """
+    minimum = 0
+    for i in items:
+        if i > 0 and (minimum == 0 or i < minimum):
+            minimum = i
+    return minimum
 
-    return
