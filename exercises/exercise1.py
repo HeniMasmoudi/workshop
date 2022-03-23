@@ -12,4 +12,3 @@ def solve(items):
         if i > 0 and (minimum == 0 or i < minimum):
             minimum = i
     return minimum
-
