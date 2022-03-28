@@ -1,8 +1,8 @@
 import pandas as pd
-from unittest.mock import patch
+from unittest import mock
 from codebase import pipeline
 
-@patch('codebase.pd.read_csv')
+@mock.patch('codebase.pd.read_csv')
 def test_aggregate_mean_feature_1(read_csv): 
     read_csv.return_value = pd.DataFrame(
         [
