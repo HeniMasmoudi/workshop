@@ -109,7 +109,7 @@ def compute_accuracy(results):
     return rmse
     
 
-if __name__ == "__main__":
+def main(workshop_home):
     data = get_preprocessed_data(workshop_home)
     features, target , cat_pos = retrieve_X_y(data)
     X, TX, y, Ty = split_data(features, target)
@@ -123,4 +123,5 @@ if __name__ == "__main__":
         plt.plot(Tout["y"][start:end], label="actuals", color="red")
         plt.plot(Tout["y_pred"][start:end], label="forecasts", color="blue")
         plt.show()
+    return out, Tout
     
