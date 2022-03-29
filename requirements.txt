@@ -2,5 +2,6 @@ spyder==5.1.5
 numpy
 pandas
 pytest 
+pytest-cov
 lightgbm
 matplotlib
