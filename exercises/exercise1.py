@@ -12,3 +12,8 @@ def solve(items):
         if i > 0 and (minimum == 0 or i < minimum):
             minimum = i
     return minimum
+
+if __name__ == "__main__":
+    integers = [1,7,8,2,9]
+    min = solve(integers)
+    print("Minimum number",min)
