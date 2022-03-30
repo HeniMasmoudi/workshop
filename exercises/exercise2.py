@@ -23,7 +23,7 @@ def mse(actuals, forecasts):
 
 
 def rmse(actuals, forecasts):
-    metric = np.sqrt(actuals, forecasts)
+    metric = np.sqrt(((actuals - forecasts) ** 2).mean())
     return metric
 
 
