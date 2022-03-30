@@ -111,3 +111,4 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+SOME_VERY_LARGE_FILE.csv

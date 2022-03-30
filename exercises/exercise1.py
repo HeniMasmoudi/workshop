@@ -16,4 +16,4 @@ def solve(items):
 if __name__ == "__main__":
     integers = [1,7,8,2,9]
     min = solve(integers)
-    print("Minimum number",min)
+    print("Minimum number is ",min)
